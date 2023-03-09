@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - run: docker login
       - run: docker pull not-fl3/cargo-apk
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
