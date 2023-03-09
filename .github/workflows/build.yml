@@ -19,4 +19,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: android  # 设置Artifact的名称
-          path: ./target/release/macroquad_learn.apk   # 设置Artifact的路径
+          path: ./target   # 设置Artifact的路径
