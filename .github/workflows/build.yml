@@ -15,8 +15,8 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - run: docker pull notfl3/cargo-apk
       - run: docker run --rm -v $(pwd):/root/src -w /root/src notfl3/cargo-apk cargo quad-apk build --release
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./target
+      - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: android  # 设置Artifact的名称
+        path: ./target/release/macroquad_learn.apk   # 设置Artifact的路径
